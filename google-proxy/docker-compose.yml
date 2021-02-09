@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  ga-proxy:
+    image: zitros/analytics-saviour:latest
+    container_name: ga-proxy
+    networks:
+      - proxy
+    restart: always
+    expose:
+      - 80
+    env_file:
+      - .env
+
+networks:
+  proxy:
+    external:
+      name: nginx-proxy
