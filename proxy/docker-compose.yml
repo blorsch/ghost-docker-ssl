@@ -15,6 +15,7 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - /usr/share/nginx/html
       - /etc/acme.sh
+      - ./custom_config.conf:/etc/nginx/conf.d/custom_config.conf:ro
     networks:
       - proxy
     restart: always
